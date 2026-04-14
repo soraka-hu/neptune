@@ -5,7 +5,10 @@
 
 ## 产品演示视频
 
-![演示](./docs/media/demo.gif)
+<p align="center">
+  <img src="docs/media/Demo.gif" width="860" alt="演示"><br>
+</p>
+
 
 <p align="center">
   无法播放时可直接下载：<a href="docs/media/Demo.mp4">Demo.mp4</a>
