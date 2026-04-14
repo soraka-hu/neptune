@@ -1,4 +1,3 @@
-<p align="center">
   <img src="docs/images/neptune-readme-header.png" alt="NEPTUNE" width="760" />
 </p>
 一个面向研发与测试团队的统一质量平台：
@@ -7,7 +6,7 @@
 ## 产品演示视频
 
 <p align="center">
-  <video src="[📹 观看演示视频](https://github.com/用户名/仓库/releases/download/v1.0/demo.mp4)" controls muted playsinline width="860"></video>
+  <video src="[📹 观看演示视频](https://github.com/soraka-hu/neptune/releases/download/v1.0/demo.mp4)" controls muted playsinline width="860"></video>
 </p>
 
 <p align="center">
