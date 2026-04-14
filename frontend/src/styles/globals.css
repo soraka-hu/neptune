@@ -1,0 +1,759 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 13% 97%;
+    --foreground: 220 39% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 39% 11%;
+    --muted: 210 20% 98%;
+    --muted-foreground: 220 9% 46%;
+    --border: 220 13% 91%;
+    --input: 220 14% 83%;
+    --ring: 162 83% 35%;
+    --primary: 162 83% 35%;
+    --primary-foreground: 0 0% 100%;
+    --success: 146 44% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 73% 44%;
+    --warning-foreground: 0 0% 100%;
+    --danger: 7 67% 47%;
+    --danger-foreground: 0 0% 100%;
+
+    --sidebar: 0 0% 100%;
+    --sidebar-foreground: 215 25% 27%;
+    --sidebar-muted: 215 16% 62%;
+    --sidebar-active: 157 43% 93%;
+    --sidebar-border: 220 13% 91%;
+
+    --app-main-bg: #f7f8fa;
+    --app-sidebar-bg: #f7f8fa;
+    --app-surface: #ffffff;
+    --app-surface-soft: #fcfdff;
+    --app-border-soft: #e5e7eb;
+    --app-border-strong: #d1d5db;
+    --app-text-strong: #111827;
+    --app-text-muted: #6b7280;
+    --app-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+    --app-logo-core: #ffffff;
+
+    --input-bg: #ffffff;
+    --input-placeholder: #9ca3af;
+    --muted-panel-bg: #f9fafb;
+    --muted-pre-bg: #fafafa;
+
+    --chart-surface-from: #ffffff;
+    --chart-surface-to: #fbfcff;
+    --chart-grid: rgba(229, 231, 235, 0.5);
+    --chart-track: #e5e7eb;
+    --chart-blue-start: #93c5fd;
+    --chart-blue-mid: #60a5fa;
+    --chart-blue-end: #3b82f6;
+    --chart-green-start: #6ee7b7;
+    --chart-green-mid: #34d399;
+    --chart-green-end: #10b981;
+    --chart-violet-start: #b18bff;
+    --chart-violet-end: #5c7cff;
+    --chart-amber-start: #fcd34d;
+    --chart-amber-end: #f59e0b;
+    --chart-pink-start: #fca5a5;
+    --chart-pink-end: #ef4444;
+
+    --select-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    color-scheme: light;
+  }
+
+  :root[data-theme="dark"],
+  :root.dark {
+    --background: 220 32% 10%;
+    --foreground: 215 36% 92%;
+    --card: 221 27% 14%;
+    --card-foreground: 215 36% 92%;
+    --muted: 220 24% 17%;
+    --muted-foreground: 217 24% 72%;
+    --border: 221 28% 23%;
+    --input: 221 24% 32%;
+    --ring: 176 77% 44%;
+    --primary: 176 77% 44%;
+    --primary-foreground: 221 46% 10%;
+    --success: 152 56% 42%;
+    --success-foreground: 222 42% 12%;
+    --warning: 40 85% 58%;
+    --warning-foreground: 222 42% 12%;
+    --danger: 353 73% 64%;
+    --danger-foreground: 222 42% 12%;
+
+    --sidebar: 220 28% 12%;
+    --sidebar-foreground: 214 35% 88%;
+    --sidebar-muted: 216 20% 64%;
+    --sidebar-active: 176 56% 17%;
+    --sidebar-border: 221 28% 23%;
+
+    --app-main-bg: #0b1222;
+    --app-sidebar-bg: #0a1325;
+    --app-surface: #111d34;
+    --app-surface-soft: #0f1a31;
+    --app-border-soft: #22314f;
+    --app-border-strong: #2a3b5d;
+    --app-text-strong: #d6e3ff;
+    --app-text-muted: #90a4cc;
+    --app-shadow: 0 12px 34px rgba(2, 6, 15, 0.56);
+    --app-logo-core: #0c1730;
+
+    --input-bg: #0f1a31;
+    --input-placeholder: #7f94bc;
+    --muted-panel-bg: #0f1a31;
+    --muted-pre-bg: #0c152a;
+
+    --chart-surface-from: #0f1a33;
+    --chart-surface-to: #0c152a;
+    --chart-grid: #2d3f62;
+    --chart-track: #1a2944;
+    --chart-blue-start: #9ad7ff;
+    --chart-blue-mid: #7aa9ff;
+    --chart-blue-end: #5b7bff;
+    --chart-green-start: #5ff3d5;
+    --chart-green-mid: #35d6b4;
+    --chart-green-end: #1ba388;
+    --chart-violet-start: #ceabff;
+    --chart-violet-end: #7994ff;
+    --chart-amber-start: #ffd68b;
+    --chart-amber-end: #f3b83f;
+    --chart-pink-start: #ff9ec8;
+    --chart-pink-end: #e078af;
+
+    --select-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2392A7CE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    margin: 0;
+    font-family:
+      Inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "PingFang SC",
+      "Segoe UI",
+      sans-serif;
+    background: var(--app-main-bg);
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.01em;
+  }
+
+  :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    @apply w-full border border-input text-[13px] text-foreground transition-colors;
+    min-height: 36px;
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    outline: none;
+    line-height: 1.45;
+    background: var(--input-bg);
+  }
+
+  :where(select) {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2.6rem;
+    background-image: var(--select-chevron);
+    background-repeat: no-repeat;
+    background-position: right 0.96rem center;
+    background-size: 14px;
+  }
+
+  :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea)::placeholder {
+    font-size: 13px;
+    color: var(--input-placeholder);
+  }
+
+  :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 1px hsl(var(--primary));
+  }
+
+  :where(input[type="checkbox"], input[type="radio"]) {
+    width: 14px;
+    height: 14px;
+    min-height: 14px;
+    margin: 0;
+    padding: 0;
+    accent-color: hsl(var(--primary));
+  }
+
+  :where(textarea) {
+    min-height: 92px;
+    resize: vertical;
+  }
+
+  :where(pre) {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+@layer components {
+  .app-sidebar {
+    background:
+      radial-gradient(circle at 85% 0%, color-mix(in srgb, var(--chart-blue-mid) 10%, transparent), transparent 42%),
+      radial-gradient(circle at 4% 100%, color-mix(in srgb, var(--chart-green-mid) 10%, transparent), transparent 35%),
+      var(--app-sidebar-bg);
+  }
+
+  .app-main {
+    background: var(--app-main-bg);
+  }
+
+  .app-main-surface {
+    background: var(--app-main-bg);
+  }
+
+  .app-logo-core {
+    background: var(--app-logo-core);
+  }
+
+  .app-brand-trigger {
+    width: 100%;
+    min-height: 58px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--app-text-strong);
+    display: inline-flex;
+    align-items: center;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .app-brand-trigger.expanded {
+    justify-content: flex-start;
+    gap: 11px;
+    padding: 8px 9px;
+  }
+
+  .app-brand-trigger.collapsed {
+    width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    padding: 0;
+    margin-inline: auto;
+    border-radius: 12px;
+  }
+
+  .app-brand-trigger:hover {
+    border-color: color-mix(in srgb, var(--chart-green-mid) 22%, var(--app-border-strong));
+    background:
+      radial-gradient(circle at 16% 18%, color-mix(in srgb, var(--chart-green-mid) 18%, transparent), transparent 58%),
+      color-mix(in srgb, var(--app-surface) 45%, transparent);
+    box-shadow: 0 5px 16px color-mix(in srgb, var(--chart-green-end) 13%, transparent);
+  }
+
+  .app-brand-trigger:focus-visible {
+    outline: none;
+    border-color: color-mix(in srgb, var(--chart-green-mid) 38%, var(--app-border-strong));
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--chart-green-mid) 24%, transparent);
+  }
+
+  .app-brand-mark {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: conic-gradient(from 212deg at 50% 50%, #79d8bc, #2ea88a, #9ae8d2, #79d8bc);
+    box-shadow:
+      0 7px 14px color-mix(in srgb, var(--chart-green-end) 20%, transparent),
+      inset 0 0 0 1px color-mix(in srgb, #ffffff 28%, transparent);
+  }
+
+  .app-brand-mark-core {
+    position: absolute;
+    inset: 6px;
+    border-radius: 999px;
+    background: var(--app-logo-core);
+  }
+
+  .app-brand-mark-orbit {
+    position: absolute;
+    inset: 11px 10px 11px 12px;
+    border-radius: 999px;
+    border: 2px solid color-mix(in srgb, var(--chart-green-mid) 62%, transparent);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-22deg);
+  }
+
+  .app-brand-mark-dot {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: color-mix(in srgb, #ffffff 90%, var(--chart-green-start));
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--chart-green-mid) 35%, transparent);
+  }
+
+  .app-brand-copy {
+    display: grid;
+    min-width: 0;
+    line-height: 1.12;
+    text-align: left;
+  }
+
+  .app-brand-name {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: color-mix(in srgb, var(--app-text-strong) 96%, #0a0a0a);
+  }
+
+  .app-brand-subtitle {
+    margin-top: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: color-mix(in srgb, var(--app-text-muted) 84%, transparent);
+  }
+
+  .app-theme-wrap {
+    position: absolute;
+    right: 16px;
+    bottom: 14px;
+    margin: 0;
+    padding: 0;
+    border-top: 0;
+    display: inline-flex;
+    z-index: 20;
+  }
+
+  .app-theme-wrap.is-expanded {
+    right: 16px;
+  }
+
+  .app-theme-wrap.is-collapsed {
+    right: 10px;
+  }
+
+  .app-theme-toggle {
+    width: 24px;
+    height: 24px;
+    min-height: 24px;
+    border-radius: 999px;
+    border: 0;
+    background: transparent;
+    color: color-mix(in srgb, var(--app-text-muted) 90%, var(--app-text-strong));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .app-theme-toggle:hover {
+    color: color-mix(in srgb, var(--chart-green-end) 80%, var(--app-text-strong));
+    transform: translateY(-1px);
+  }
+
+  .app-theme-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--chart-green-mid) 30%, transparent);
+  }
+
+  .app-theme-toggle-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: currentColor;
+  }
+
+  .app-theme-toggle.is-dark {
+    color: color-mix(in srgb, var(--chart-amber-end) 82%, var(--app-text-strong));
+  }
+
+  .console-panel {
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: 12px !important;
+    background: var(--app-surface) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .console-panel-subtle {
+    @apply rounded-xl border border-border bg-muted;
+  }
+
+  .page-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .section-caption {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--app-text-muted);
+  }
+
+  .status-pill {
+    @apply inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-medium;
+  }
+
+  .status-pill-success {
+    @apply status-pill border-emerald-200 bg-emerald-50 text-emerald-700;
+  }
+
+  .status-pill-error {
+    @apply status-pill border-red-200 bg-red-50 text-red-700;
+  }
+
+  .status-pill-running {
+    @apply status-pill border-blue-200 bg-blue-50 text-blue-700;
+  }
+
+  .status-pill-queued {
+    @apply status-pill border-zinc-200 bg-zinc-100 text-zinc-600;
+  }
+
+  .data-table {
+    @apply w-full border-collapse text-left text-sm;
+  }
+
+  .data-table thead tr {
+    background: var(--app-surface-soft);
+    border-bottom: 1px solid hsl(var(--border));
+    color: var(--app-text-muted);
+  }
+
+  .data-table th {
+    @apply px-3 py-2.5 text-[12px] font-semibold;
+  }
+
+  .data-table td {
+    @apply px-3 py-2.5 align-top text-sm text-foreground/90;
+  }
+
+  .data-table tbody tr {
+    border-bottom: 1px solid color-mix(in srgb, var(--app-border-soft) 70%, transparent);
+    min-height: 44px;
+  }
+
+  .data-table tbody tr:hover {
+    background: var(--muted-panel-bg);
+  }
+
+  .data-kv {
+    @apply grid gap-1 rounded-lg border border-border p-3;
+    background: var(--app-surface);
+  }
+
+  .data-kv-label {
+    @apply text-[11px] uppercase tracking-[0.08em] text-muted-foreground;
+  }
+
+  .data-kv-value {
+    @apply text-[15px] font-semibold text-foreground;
+  }
+
+  .console-btn,
+  .console-btn-primary,
+  .console-btn-secondary,
+  .console-btn-danger {
+    @apply inline-flex items-center justify-center gap-1.5 border font-medium transition-colors;
+    min-height: 34px;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 12.5px;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .console-btn {
+    background: var(--app-surface);
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+
+  .console-btn-primary {
+    background: #10a37f;
+    border-color: #10a37f;
+    color: #ffffff;
+  }
+
+  .console-btn-primary:hover {
+    background: #0e8f6f;
+    border-color: #0e8f6f;
+  }
+
+  .console-btn-secondary {
+    background: var(--app-surface);
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+
+  .console-btn-secondary:hover {
+    background: var(--app-surface-soft);
+  }
+
+  .console-btn-danger {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+  }
+
+  .console-btn-danger:hover {
+    background: #fee2e2;
+  }
+
+  .console-tab {
+    @apply border text-xs font-medium transition-colors;
+    min-height: 32px;
+    border-radius: 8px;
+    border-color: hsl(var(--border));
+    background: var(--app-surface);
+    color: var(--app-text-muted);
+    padding: 0 10px;
+  }
+
+  .console-tab-active {
+    border-color: hsl(var(--primary));
+    background: color-mix(in srgb, var(--chart-green-mid) 14%, var(--app-surface));
+    color: color-mix(in srgb, var(--chart-green-end) 85%, var(--app-text-strong));
+  }
+
+  .segmented-group {
+    @apply inline-flex items-center rounded-lg border border-border bg-muted;
+    padding: 2px;
+  }
+
+  .segmented-item {
+    @apply rounded-md px-3 py-1 text-xs font-medium text-muted-foreground transition-colors;
+  }
+
+  .segmented-item:hover {
+    color: hsl(var(--foreground));
+  }
+
+  .segmented-item-active {
+    background: var(--app-surface);
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .console-muted-card {
+    @apply rounded-lg border border-border bg-muted px-3 py-2;
+  }
+
+  .console-scroll {
+    @apply rounded-lg border border-border;
+    background: var(--app-surface);
+  }
+
+  .assets-page > header,
+  .generation-page > header,
+  .rules-page > header,
+  .environment-page > header,
+  .reports-page > header,
+  .case-edit-page > header,
+  .execution-page > header {
+    margin: -24px -24px 0 -24px;
+    min-height: 84px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 24px;
+    background:
+      radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--chart-blue-mid) 10%, transparent), transparent 42%),
+      var(--app-main-bg);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .assets-page :where(form, section, article, .modal-content),
+  .generation-page :where(form, section, article, .modal-content),
+  .rules-page :where(form, section, article, .modal-content),
+  .environment-page :where(form, section, article, .modal-content),
+  .reports-page :where(form, section, article, .modal-content),
+  .case-edit-page :where(form, section, article, .modal-content),
+  .execution-page :where(form, section, article, .modal-content) {
+    transition: all 0.15s ease;
+  }
+
+  .assets-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
+  .generation-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
+  .rules-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
+  .environment-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
+  .reports-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
+  .case-edit-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea),
+  .execution-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    min-height: 36px !important;
+    border-radius: 8px !important;
+    border-color: hsl(var(--input)) !important;
+    background: var(--input-bg) !important;
+    box-shadow: none !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+    padding: 0.5rem 0.8rem !important;
+  }
+
+  .assets-page :where(select),
+  .generation-page :where(select),
+  .rules-page :where(select),
+  .environment-page :where(select),
+  .reports-page :where(select),
+  .case-edit-page :where(select),
+  .execution-page :where(select) {
+    padding-right: 2.6rem !important;
+    background-position: right 0.96rem center !important;
+  }
+
+  .assets-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea)::placeholder,
+  .generation-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea)::placeholder,
+  .rules-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea)::placeholder,
+  .environment-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea)::placeholder,
+  .reports-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea)::placeholder,
+  .case-edit-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea)::placeholder,
+  .execution-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea)::placeholder {
+    font-size: 13px !important;
+    color: var(--input-placeholder);
+  }
+
+  .assets-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus,
+  .generation-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus,
+  .rules-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus,
+  .environment-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus,
+  .reports-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus,
+  .case-edit-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus,
+  .execution-page :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus {
+    border-color: #10a37f !important;
+    box-shadow: 0 0 0 1px #10a37f !important;
+  }
+
+  .assets-page :where(button),
+  .generation-page :where(button),
+  .rules-page :where(button),
+  .environment-page :where(button),
+  .reports-page :where(button),
+  .case-edit-page :where(button),
+  .execution-page :where(button) {
+    border-radius: 8px !important;
+    letter-spacing: 0;
+    transition: all 0.15s ease;
+    font-size: 12.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  .assets-page :where(table),
+  .generation-page :where(table),
+  .rules-page :where(table),
+  .environment-page :where(table),
+  .reports-page :where(table),
+  .case-edit-page :where(table),
+  .execution-page :where(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .assets-page :where(th),
+  .generation-page :where(th),
+  .rules-page :where(th),
+  .environment-page :where(th),
+  .reports-page :where(th),
+  .case-edit-page :where(th),
+  .execution-page :where(th) {
+    padding: 10px 10px !important;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--app-text-muted);
+    background: var(--app-surface-soft);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .assets-page :where(td),
+  .generation-page :where(td),
+  .rules-page :where(td),
+  .environment-page :where(td),
+  .reports-page :where(td),
+  .case-edit-page :where(td),
+  .execution-page :where(td) {
+    padding: 12px 10px !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--app-border-soft) 70%, transparent);
+    color: hsl(var(--foreground));
+    vertical-align: top;
+  }
+
+  .assets-page :where(pre),
+  .generation-page :where(pre),
+  .rules-page :where(pre),
+  .environment-page :where(pre),
+  .reports-page :where(pre),
+  .case-edit-page :where(pre),
+  .execution-page :where(pre) {
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: 8px !important;
+    background: var(--muted-pre-bg) !important;
+    font-size: 12px !important;
+    line-height: 1.6;
+    padding: 10px;
+  }
+
+  .assets-page :where(a),
+  .generation-page :where(a),
+  .rules-page :where(a),
+  .environment-page :where(a),
+  .reports-page :where(a),
+  .case-edit-page :where(a),
+  .execution-page :where(a) {
+    text-decoration: none;
+  }
+
+  .assets-page,
+  .generation-page,
+  .rules-page,
+  .environment-page,
+  .reports-page,
+  .case-edit-page,
+  .execution-page {
+    min-height: calc(100vh - 48px);
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 2px;
+    align-content: start;
+    grid-auto-rows: max-content;
+  }
+
+  .reports-page.reports-page-capture {
+    min-height: 0;
+    max-height: none;
+    overflow-y: visible;
+    overflow-x: visible;
+    padding-right: 0;
+  }
+}
