@@ -6,7 +6,7 @@
 ## 产品演示视频
 
 <p align="center">
-  <video src="[📹 观看演示视频](https://github.com/soraka-hu/neptune/releases/download/v1.0/demo.mp4)" controls muted playsinline width="860"></video>
+  <video src="https://raw.githubusercontent.com/soraka-hu/neptune/main/docs/media/Demo.mp4" controls width="860"></video></video>
 </p>
 
 <p align="center">
