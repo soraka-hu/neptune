@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reference Expected Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "reference_answer"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "reference_answer": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "must_include": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "format_requirements": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

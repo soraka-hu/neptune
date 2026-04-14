@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Case Input Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "user_input"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "user_input": {
+      "type": "string",
+      "minLength": 1
+    },
+    "conversation_history": {
+      "type": "array"
+    },
+    "tools_context": {
+      "type": "array"
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

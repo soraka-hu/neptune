@@ -1,0 +1,44 @@
+# macOS / system
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+.cursor/
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage/
+
+# Python virtual envs
+.venv/
+venv/
+backend/.venv/
+
+# Runtime / local database
+.runtime/
+backend/.runtime/
+*.sqlite3
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
