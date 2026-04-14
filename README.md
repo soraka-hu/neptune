@@ -6,11 +6,11 @@
 ## 产品演示视频
 
 <p align="center">
-  <img src="docs/media/Demo.gif" width="860" alt="提交任务"><br>
-  <img src="docs/images/product-execution-builder.png" width="860" alt="提交任务"><br>
-  <img src="docs/images/project-dashboard-project-182-range-7d-type-all-env-all-model-all-2026-04-14-15-15-20-ezgif.com-optipng.png" width="860" alt="报告页面"><br>
+  <a href="https://github.com/soraka-hu/neptune/blob/main/docs/media/Demo.mp4?raw=true">
+    <img src="docs/media/cover.png" width="860" alt="点击播放演示视频"><br>
+    <sub>▶ 点击播放（1分30秒完整演示）</sub>
+  </a>
 </p>
-
 
 <p align="center">
   无法播放时可直接下载：<a href="docs/media/Demo.mp4">Demo.mp4</a>
