@@ -6,7 +6,7 @@
 ## 产品演示视频
 
 <p align="center">
-  <img src="docs/media/Demo.gif" width="860" alt="演示"><br>
+  
   <img src="docs/images/product-execution-builder.png" width="860" alt="提交任务"><br>
   <img src="docs/images/product-project-dashboard.png" width="860" alt="报告页面"><br>
 </p>
