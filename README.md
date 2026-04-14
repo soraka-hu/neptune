@@ -6,7 +6,7 @@
 ## 产品演示视频
 
 <p align="center">
-  <video src="https://raw.githubusercontent.com/soraka-hu/neptune/main/docs/media/Demo.mp4" controls width="860"></video></video>
+  🎬 <a href="https://github.com/soraka-hu/neptune/blob/main/docs/media/Demo.mp4?raw=true">观看产品演示视频</a>
 </p>
 
 <p align="center">
