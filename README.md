@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="docs/images/product-execution-builder.png" width="860" alt="提交任务"><br>
-  <img src="docs/images/project-dashboard-project-182-range-7d-type-all-env-all-model-all-2026-04-14-15-15-20" width="860" alt="报告页面"><br>
+  <img src="docs/images/project-dashboard-project-182-range-7d-type-all-env-all-model-all-2026-04-14-15-15-20-ezgif.com-optipng.png" width="860" alt="报告页面"><br>
 </p>
 
 
