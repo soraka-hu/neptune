@@ -5,9 +5,7 @@
 
 ## 产品演示视频
 
-<p align="center">
-  🎬 <a href="https://github.com/soraka-hu/neptune/blob/main/docs/media/Demo.mp4?raw=true">观看产品演示视频</a>
-</p>
+![演示](./docs/media/demo.gif)
 
 <p align="center">
   无法播放时可直接下载：<a href="docs/media/Demo.mp4">Demo.mp4</a>
