@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "API Expected Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status_code", "json_fields"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "status_code": {
+      "type": "integer"
+    },
+    "json_fields": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

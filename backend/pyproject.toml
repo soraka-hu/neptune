@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unified-test-eval-platform-backend"
+version = "0.1.0"
+description = "Backend for unified test and evaluation platform"
+requires-python = ">=3.11"
+dependencies = [
+  "alembic>=1.13",
+  "celery>=5.4",
+  "fastapi>=0.115",
+  "jsonschema>=4.0",
+  "psycopg[binary]>=3.1",
+  "sqlalchemy>=2.0",
+  "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.28",
+  "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

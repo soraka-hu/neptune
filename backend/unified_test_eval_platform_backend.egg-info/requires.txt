@@ -1,0 +1,11 @@
+alembic>=1.13
+celery>=5.4
+fastapi>=0.115
+jsonschema>=4.0
+psycopg[binary]>=3.1
+sqlalchemy>=2.0
+uvicorn>=0.30
+
+[dev]
+httpx>=0.28
+pytest>=8.0
